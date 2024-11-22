@@ -89,6 +89,24 @@
      dell.insertBefore(nuevo,listaitem3)
      })
      */
+    var parr="My Parrafo con innerHtml reemplazó el html "
+ //div hijo creado de div prueba
+  var MyDiv=document.querySelector('#prueba')
+  MyDiv.innerHTML=parr
+   NuevoDiv=document.createElement('div')
+      NuevoDiv.setAttribute('name', 'divHijo')
+      NuevoDiv.id='divHijo'
+      NuevoDiv.classList.add('divHijo')
+      MyDiv.appendChild(NuevoDiv)
+
+ //subtitulo del div hijo creado de div prueba
+    var h2=document.createElement('h2')
+      h2.setAttribute('name', 'subtitulo')
+      h2.classList.add('subtitulo')
+      h2.id='subtitulo'
+      h2.innerText='Subtitulo'
+      NuevoDiv.appendChild(h2)
+      
     const myMove= ()=>{
     
       let id= null;
