@@ -88,7 +88,7 @@
      // dell.appendChild(nuevo)
      dell.insertBefore(nuevo,listaitem3)
      })
-     */
+    
     var parr="My Parrafo con innerHtml reemplazó el html "
  //div hijo creado de div prueba
   var MyDiv=document.querySelector('#prueba')
@@ -127,6 +127,84 @@
       }
       id= setInterval(frame, 5);
     }
+    document.write('<br>')
+    //callback 
+    const imprimir=(sum)=>{
+      document.write('el resultado es: '+sum)
+    }
+
+    var micalculadora= (num1, num2, imprimir)=>{
+      let sum=num1+num2
+      imprimir(sum)
+     
+    }
+    micalculadora(3,5,imprimir)
+
+    //async awayt
+
+const pruebaAsincrona = async()=>{
+  let resultado= await fetch('https://rickandmortyapi.com/api/character')
+  let respuesta= await resultado.json()
+  let results=respuesta.results
+
+ let recoge=document.querySelector('.cuerpo-table')
+  Object.keys(results).forEach((key)=>{
+   let fila = document.createElement('tr')
+   let colNombre=document.createElement('td')
+   colNombre.innerText=results[key].name
+   let colEstado=document.createElement('td')
+   colEstado.innerText=results[key].status
+   let colEspecie=document.createElement('td')
+   colEspecie.innerText=results[key].species
+   let colGener=document.createElement('td')
+   colGener.innerText=results[key].gender
+  fila.appendChild(colNombre)
+  fila.appendChild(colEstado)
+  fila.appendChild(colEspecie)
+  fila.appendChild(colGener)
+  recoge.appendChild(fila)
+  })
+}
+  */
+//pruebaAsincrona()
+//api form
+var Submit=document.querySelector('.btn-submit')
+var User=document.querySelector('.usuario')
+var password=document.querySelector('.contraseña')
+var textUser=document.querySelector('.text-user')
+var textContra=document.querySelector('.text-contraseña')
+
+Submit.addEventListener('click', () =>{
+if(User.checkValidity()==false){
+  textUser.innerText=User.validationMessage;
+}else{
+   textUser.innerText=''
+}
+if(password.checkValidity()==false){
+  textContra.innerText=password.validationMessage
+}else{
+ textContra.innerText=''
+}
+
+})
+
+function irAdelante(){
+  window.history.forward()
+}
+//api storage
+localStorage.setItem('usuario', 'Carlos')
+localStorage.setItem('usuario2', 'Donny')
+localStorage.setItem('usuario3', 'Isaias')
+localStorage.setItem('usuario4', 'Bene')
+localStorage.setItem('usuario5', 'Elineth')
+localStorage.clear();
+console.log(localStorage.getItem('usuario5'))
+
+//localStorage.removeIem('usuario')
+//alert(localStorage.getItem('usuario'))
+
+
+
 
 
 
